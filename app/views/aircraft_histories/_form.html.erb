@@ -1,0 +1,18 @@
+<%= form_for([@aircraft, @aircraft.aircraft_histories.build]) do |f| %>
+        <%= f.error_messages %>
+        <div class="field">
+                <%= f.label :aircraft_sequence %><br />
+		<%= f.text_field :aircraft_sequence %>
+        </div>
+  	<div class="field">
+    		<%= f.label :registration %><br />
+    		<%= f.text_field :registration %>
+  	</div>
+  	<div class="field">
+    		<%= f.label :aircraft_details %><br />
+    		<%= f.text_field :aircraft_details %>
+  	</div>
+        <div class="actions">
+                <%= f.submit %>
+        </div>
+<% end %>

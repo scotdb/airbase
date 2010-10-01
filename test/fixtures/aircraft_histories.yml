@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  aircraft_id: 1
+  aircraft_sequence: 1
+  registration: MyString
+  aircraft_details: MyString
+
+two:
+  aircraft_id: 1
+  aircraft_sequence: 1
+  registration: MyString
+  aircraft_details: MyString

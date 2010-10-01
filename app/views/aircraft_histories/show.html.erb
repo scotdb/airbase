@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Aircraft:</b>
+  <%= @aircraft_history.aircraft_id %>
+</p>
+
+<p>
+  <b>Aircraft sequence:</b>
+  <%= @aircraft_history.aircraft_sequence %>
+</p>
+
+<p>
+  <b>Registration:</b>
+  <%= @aircraft_history.registration %>
+</p>
+
+<p>
+  <b>Aircraft details:</b>
+  <%= @aircraft_history.aircraft_details %>
+</p>
+
+
+<%= link_to 'Edit', edit_aircraft_history_path(@aircraft_history) %> |
+<%= link_to 'Back', aircraft_histories_path %>

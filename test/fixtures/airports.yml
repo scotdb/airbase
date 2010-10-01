@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: 
+  iata_code: 
+  icao_code: MyString
+
+two:
+  name: 
+  iata_code: 
+  icao_code: MyString

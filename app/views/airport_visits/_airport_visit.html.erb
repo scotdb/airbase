@@ -1,0 +1,8 @@
+   <p>
+      <%= airport_visit.visit_date %> 
+       
+      <%= link_to 'Delete Visit' , [airport_visit.airport, airport_visit], 
+                  :confirm => "Are you sure ?",
+                  :method  => :delete 
+      %>
+   </p>

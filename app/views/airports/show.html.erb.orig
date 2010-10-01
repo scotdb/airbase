@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @airport.name %>
+</p>
+
+<p>
+  <b>Iata code:</b>
+  <%= @airport.iata_code %>
+</p>
+
+<p>
+  <b>Icao code:</b>
+  <%= @airport.icao_code %>
+</p>
+
+<h2>Airport Visits</h2>
+<%= render :partial => "airport_visits/airport_visit",
+           :collection => @airport.airport_visits %>
+
+<h2>Add a Visit</h2>
+
+<%= form_for([@airport, @airport.airport_visits.build]) do |f| %>  
+	<%= f.error_messages %>  
+	<div class="field">  
+		<%= f.label :visit_date %><br />  
+		<%= f.date_select :visit_date %>  
+	</div>  
+	<div class="actions">  
+		<%= f.submit %>  
+	</div> 
+<% end %> 
+
+
+<%= link_to 'Edit', edit_airport_path(@airport) %> |
+<%= link_to 'Back', airports_path %>

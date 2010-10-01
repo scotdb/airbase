@@ -1,0 +1,33 @@
+<h1>Airports</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>IATA Code</th>
+    <th>ICAO Code</th>
+    <th>Visits</th>
+    <th>Earliest</th>
+    <th>Latest</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @airports.each do |airport| %>
+  <tr>
+    <td><%= airport.name %></td>
+    <td><%= airport.iata_code %></td>
+    <td><%= airport.icao_code %></td>
+    <td><%= airport.airport_visits.count %></td>
+    <td><%= airport.airport_visits.minimum(:visit_date) %></td>
+    <td><%= airport.airport_visits.maximum(:visit_date) %></td>
+    <td><%= link_to 'Show', airport %></td>
+    <td><%= link_to 'Edit', edit_airport_path(airport) %></td>
+    <td><%= link_to 'Destroy', airport, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add New Airport', new_airport_path %>

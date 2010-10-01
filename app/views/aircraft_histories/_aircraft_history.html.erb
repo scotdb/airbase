@@ -1,0 +1,11 @@
+   <tr>
+      <td><%= aircraft_history.aircraft_sequence %></td>
+      <td><%= aircraft_history.registration %></td>
+      <td><%= aircraft_history.aircraft_details %></td>
+
+      <td><%= link_to 'Delete Entry' , [aircraft_history.aircraft, aircraft_history],
+                  :confirm => "Are you sure ?",
+                  :method  => :delete
+      %>
+      </td>
+   </tr>

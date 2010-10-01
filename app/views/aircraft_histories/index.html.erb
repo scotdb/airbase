@@ -1,0 +1,29 @@
+<h1>Listing aircraft_histories</h1>
+
+<table>
+  <tr>
+    <th>Aircraft</th>
+    <th>Aircraft sequence</th>
+    <th>Registration</th>
+    <th>Aircraft details</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @aircraft_histories.each do |aircraft_history| %>
+  <tr>
+    <td><%= aircraft_history.aircraft_id %></td>
+    <td><%= aircraft_history.aircraft_sequence %></td>
+    <td><%= aircraft_history.registration %></td>
+    <td><%= aircraft_history.aircraft_details %></td>
+    <td><%= link_to 'Show', aircraft_history %></td>
+    <td><%= link_to 'Edit', edit_aircraft_history_path(aircraft_history) %></td>
+    <td><%= link_to 'Destroy', aircraft_history, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Aircraft history', new_aircraft_history_path %>

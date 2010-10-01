@@ -1,0 +1,10 @@
+<%= form_for([@airport, @airport.airport_visits.build]) do |f| %>
+        <%= f.error_messages %>
+        <div class="field">
+                <%= f.label :visit_date %><br />
+                <%= f.date_select :visit_date %>
+        </div>
+        <div class="actions">
+                <%= f.submit %>
+        </div>
+<% end %>

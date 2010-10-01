@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  aircraft_type: MyString
+  constructors_number: MyString
+  line_number: 1
+  aircraft_status_id: 1
+
+two:
+  aircraft_type: MyString
+  constructors_number: MyString
+  line_number: 1
+  aircraft_status_id: 1

@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+current:
+  description: Current 
+
+unknown:
+  description: Unknown 
+
+noncurrent:
+  description: Non-current

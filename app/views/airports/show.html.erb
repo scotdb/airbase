@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @airport.name %></h2>
+
+  <p>IATA Code: <%= @airport.iata_code %></p>
+  <p>ICAO Code: <%= @airport.icao_code %></p>
+
+<h2>Visit Dates</h2>
+
+<%= render :partial    => "airport_visits/airport_visit",
+           :collection => @airport.airport_visits %>
+
+<h2>Add a New Visit</h2>
+
+<%= render "airport_visits/form" %>
+
+<%= link_to 'Edit', edit_airport_path(@airport) %> |
+<%= link_to 'Back', airports_path %>

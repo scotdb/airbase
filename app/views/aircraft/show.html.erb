@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Aircraft</h2>
+
+<table>
+  <tr>
+    <th>Aircraft Type</th>
+    <th>C/N</th>
+    <th>L/N</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td><%= @aircraft.aircraft_type %></td>
+    <td><%= @aircraft.constructors_number %></td>
+    <td><%= @aircraft.line_number %></td>
+    <td><%= @aircraft.aircraft_status.description %></td>
+  </tr>
+</table>
+
+<h2>Registration History</h2>
+
+<table>
+  <tr>
+    <th>Sequence</th>
+    <th>Registration</th>
+    <th>Aircraft Details</th>
+    <th/>
+  </tr>
+<%= render :partial    => "aircraft_histories/aircraft_history",
+           :collection => @aircraft.aircraft_histories %>
+</table>
+
+<h2>Add a New Registration</h2>
+
+<%= render "aircraft_histories/form" %>
+
+
+
+<%= link_to 'Edit', edit_aircraft_path(@aircraft) %> |
+<%= link_to 'Back', aircraft_index_path %>
