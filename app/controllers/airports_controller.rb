@@ -2,12 +2,13 @@ class AirportsController < ApplicationController
   # GET /airports
   # GET /airports.xml
   def index
-    @airports = Airport.all
+    @airports = Airport.paginate :page => params[:page], :per_page => 20
+    # @airports = Airport.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @airports }
-    end
+    # respond_to do |format|
+      # format.html # index.html.erb
+      # format.xml  { render :xml => @airports }
+    # end
   end
 
   # GET /airports/1

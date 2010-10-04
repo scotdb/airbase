@@ -3,7 +3,8 @@ class AircraftController < ApplicationController
   # GET /aircraft.xml
   def index
     # @aircraft = Aircraft.all
-    @aircraft = Aircraft.paginate :page => params[:page] 
+    # @aircraft = Aircraft.paginate :page => params[:page] 
+    @aircraft = Aircraft.search(params[:search], params[:page])
 
     # respond_to do |format|
     #   format.html # index.html.erb

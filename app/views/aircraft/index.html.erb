@@ -1,5 +1,37 @@
 <h1>Aircraft</h1>
 
-<%= will_paginate @aircraft  %>
+<% form_tag request.path, :method => 'get' do %>
+  <% content_tag :label do %>
+    Search term:
+    <%= text_field_tag :search, params[:search] %>
+  <% end %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Aircraft type</th>
+    <th>Constructors number</th>
+    <th>Line number</th>
+    <th>Aircraft status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @aircraft.each do |aircraft| %>
+  <tr>
+    <td><%= aircraft.aircraft_type %></td>
+    <td><%= aircraft.constructors_number %></td>
+    <td><%= aircraft.line_number %></td>
+    <td><%= aircraft.aircraft_status.description %></td>
+    <td><%= link_to 'Show', aircraft %></td>
+    <td><%= link_to 'Edit', edit_aircraft_path(aircraft) %></td>
+    <td><%= link_to 'Destroy', aircraft, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<%= will_paginate @aircraft %>
 
 <%= link_to 'New Aircraft', new_aircraft_path %>
