@@ -17,10 +17,10 @@ class AircraftController < ApplicationController
   def show
     @aircraft = Aircraft.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @aircraft }
-    end
+    # respond_to do |format|
+      # format.html # show.html.erb
+      # format.xml  { render :xml => @aircraft }
+    # end
   end
 
   # GET /aircraft/new
@@ -81,5 +81,14 @@ class AircraftController < ApplicationController
       format.html { redirect_to(aircraft_index_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def sort
+    @aircraft = Aircraft.find(params[:id])
+    @aircraft.aircraft_histories.each do |ah|
+       ah.aircraft_sequence = params['ah-list' ].index(ah.id.to_s) + 1
+       ah.save
+    end
+    render :nothing => true
   end
 end

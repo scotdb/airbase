@@ -2,6 +2,9 @@ Airbase::Application.routes.draw do
 
   resources :aircraft do
     resources :aircraft_histories
+    collection do
+      post :sort
+    end
   end
 
   resources :airports do

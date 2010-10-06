@@ -12,7 +12,7 @@
   </tr>
 
 <% @aircraft_histories.each do |aircraft_history| %>
-  <tr>
+  <tr id="ah_<%=aircraft_history.id %>">
     <td><%= aircraft_history.aircraft_id %></td>
     <td><%= aircraft_history.aircraft_sequence %></td>
     <td><%= aircraft_history.registration %></td>

@@ -26,9 +26,21 @@
     <th>Aircraft Details</th>
     <th/>
   </tr>
-<%= render :partial    => "aircraft_histories/aircraft_history",
-           :collection => @aircraft.aircraft_histories %>
 </table>
+
+<ul id="ah-list" >
+<% @aircraft.aircraft_histories.each do |ah| %>
+<li id="ah_<%= ah.id %>" >
+<%= ah.registration %> : <%= ah.aircraft_details %>
+</li>
+<% end %>
+</ul>
+
+<%= sortable_element 'ah-list',
+    :url => { :action => "sort" , :id => @aircraft },
+:complete => visual_effect(:highlight, 'ah-list')
+
+ %>
 
 <h2>Add a New Registration</h2>
 

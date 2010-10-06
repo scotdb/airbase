@@ -1,11 +1,10 @@
-   <tr>
-      <td><%= aircraft_history.aircraft_sequence %></td>
-      <td><%= aircraft_history.registration %></td>
-      <td><%= aircraft_history.aircraft_details %></td>
+   <li id="ah_<%= aircraft_history.id %>">
+      <%= aircraft_history.aircraft_sequence %>
+      <%= aircraft_history.registration %>
+      <%= aircraft_history.aircraft_details %>
 
-      <td><%= link_to 'Delete Entry' , [aircraft_history.aircraft, aircraft_history],
+      <%= link_to 'Delete Entry' , [aircraft_history.aircraft, aircraft_history],
                   :confirm => "Are you sure ?",
                   :method  => :delete
       %>
-      </td>
-   </tr>
+   </li>
