@@ -29,11 +29,10 @@
 </table>
 
 <ul id="ah-list" >
-<% @aircraft.aircraft_histories.each do |ah| %>
-<li id="ah_<%= ah.id %>" >
-<%= ah.registration %> : <%= ah.aircraft_details %>
-</li>
-<% end %>
+
+<%= render :partial    => "aircraft_histories/aircraft_history",
+           :collection => @aircraft.aircraft_histories %>
+
 </ul>
 
 <%= sortable_element 'ah-list',
