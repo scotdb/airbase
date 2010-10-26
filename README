@@ -2,6 +2,13 @@ AirBase
 =======
 System for aircraft enthusiasts developed using Ruby on Rails and with IBM DB2 Express-C as the underlying database.
 
+Initially will focus on the "master record" for each aircraft.
+
+Will then allow individual users to maintain their own versions, which they can check out and edit.
+This can then be put forward as a candidate for updating the master record.
+
+Will also allow individual users to maintain their own list of airport visits and aircraft seen.
+
 
 
 There follows the standard Rails README information -

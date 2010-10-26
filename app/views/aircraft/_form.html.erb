@@ -24,8 +24,12 @@
     <%= f.text_field :line_number %>
   </div>
   <div class="field">
-    <%= f.label :aircraft_status_id %><br />
-    <%= f.text_field :aircraft_status_id %>
+    <%=
+      @statuses = AircraftStatus.find(:all, :order => "description")
+      f.label :aircraft_status 
+     %>
+    <br />
+    <%= f.collection_select(:aircraft_status, @statuses, :id, :description) %>
   </div>
   <div class="actions">
     <%= f.submit %>
