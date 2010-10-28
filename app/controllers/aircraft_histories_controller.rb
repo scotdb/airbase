@@ -42,7 +42,7 @@ class AircraftHistoriesController < ApplicationController
 
   def create
     @aircraft = Aircraft.find(params[:aircraft_id])
-    @aircraft_history = AircraftHistory.new(params[:aircraft_history])
+    @aircraft_history = @aircraft.aircraft_histories.create(params[:aircraft_history])
     redirect_to aircraft_path(@aircraft)
   end
 
