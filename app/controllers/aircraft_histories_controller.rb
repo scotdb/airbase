@@ -39,18 +39,11 @@ class AircraftHistoriesController < ApplicationController
 
   # POST /aircraft_histories
   # POST /aircraft_histories.xml
-  def create
-    @aircraft_history = AircraftHistory.new(params[:aircraft_history])
 
-    respond_to do |format|
-      if @aircraft_history.save
-        format.html { redirect_to(@aircraft_history, :notice => 'Aircraft history was successfully created.') }
-        format.xml  { render :xml => @aircraft_history, :status => :created, :location => @aircraft_history }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @aircraft_history.errors, :status => :unprocessable_entity }
-      end
-    end
+  def create
+    @aircraft = Aircraft.find(params[:aircraft_id])
+    @aircraft_history = AircraftHistory.new(params[:aircraft_history])
+    redirect_to aircraft_path(@aircraft)
   end
 
   # PUT /aircraft_histories/1
