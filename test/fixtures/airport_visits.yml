@@ -1,9 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  airport_id: 1
-  visit_date: 2010-09-04
-
-two:
-  airport_id: 1
-  visit_date: 2010-09-04
+  airport: edinburgh
+  visit_date: 2010-09-07

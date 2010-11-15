@@ -1,5 +1,7 @@
 Airbase::Application.routes.draw do
 
+  devise_for :users
+
   resources :aircraft do
     resources :aircraft_histories
     collection do

@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: 
-  iata_code: 
-  icao_code: MyString
+edinburgh:
+  name: Edinburgh 
+  iata_code: EDI
+  icao_code: EGPH
 
-two:
-  name: 
-  iata_code: 
-  icao_code: MyString
+newark:
+  name: Newark Liberty International
+  iata_code: EWR
+  icao_code: KEWR
