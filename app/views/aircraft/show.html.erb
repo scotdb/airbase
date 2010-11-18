@@ -28,12 +28,14 @@
   </tr>
 </table>
 
+<div id="aircraft-list">
 <ul id="ah-list" >
 
 <%= render :partial    => "aircraft_histories/aircraft_history",
            :collection => @aircraft.aircraft_histories %>
 
 </ul>
+</div>
 
 <%= sortable_element 'ah-list',
     :url => { :action => "sort" , :id => @aircraft },

@@ -55,3 +55,14 @@ Now export aircraft history -
 
 db2 "connect to dbair001 user db2inst1"
 db2 -td# -vf export_aircraft_history.sql
+
+And load aircraft history into new database -
+
+db2 "connect to airb_<env> user db2inst1" (where <env> is one of dev, tst or prd) 
+db2 -td# -vf load_aircraft_history.sql
+
+Now reset identity columns -
+
+db2 -td# -xf generate_identity_reset_ah.sql >identity_reset_ah.sql
+db2 -td# -vf identity_reset_ah.sql
+
