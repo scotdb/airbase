@@ -7,6 +7,23 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<h1>Airbase : Aircraft Spotting System</h1>
+<div id="nav-menu">
+<ul>
+<li>
+<%= link_to "Aircraft Statuses", aircraft_statuses_path %>
+</li>
+<li>
+<%= link_to "Airports and Visits", airports_path %>
+</li>
+<li>
+<%= link_to "Aircraft Histories", aircraft_index_path %>
+</li>
+</ul>
+</div>
+
+<div id="clearboth">
+</div>
 
 <%= yield %>
 
