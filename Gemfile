@@ -5,7 +5,12 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'ibm_db'
+if defined?(JRUBY_VERSION)
+  gem 'activerecord-jdbc-adapter', '>= 1.1.0'
+  gem 'jruby-openssl'
+else
+  gem 'ibm_db'
+end
 
 gem 'acts_as_list'
 
