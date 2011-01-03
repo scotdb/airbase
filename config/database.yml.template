@@ -47,6 +47,14 @@ development:
   #timeout: 10
   #authentication: SERVER
   #parameterized: false
+  #
+  # Alternative settings for JRuby / JDBC
+  #
+  # adapter: jdbc
+  # driver: com.ibm.db2.jcc.DB2Driver
+  # url: jdbc:db2:airb_dev
+  # username: db2inst1
+  # password: <password>
 
 test:
   adapter: ibm_db
