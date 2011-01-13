@@ -5,3 +5,5 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 config/database.yml
+airbase.war*
+Gemfile.lock

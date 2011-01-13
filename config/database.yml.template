@@ -52,7 +52,7 @@ development:
   #
   # adapter: jdbc
   # driver: com.ibm.db2.jcc.DB2Driver
-  # url: jdbc:db2:airb_dev
+  # url: jdbc:db2:localhost:50000/airbjdev
   # username: db2inst1
   # password: <password>
 
