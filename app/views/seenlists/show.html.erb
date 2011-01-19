@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Airport visit:</b>
+  <%= @seenlist.airport_visit_id %>
+</p>
+
+<p>
+  <b>Aircraft history:</b>
+  <%= @seenlist.aircraft_history_id %>
+</p>
+
+<p>
+  <b>Registration:</b>
+  <%= @seenlist.registration %>
+</p>
+
+<p>
+  <b>Aircraft type:</b>
+  <%= @seenlist.aircraft_type %>
+</p>
+
+<p>
+  <b>Constructors number:</b>
+  <%= @seenlist.constructors_number %>
+</p>
+
+<p>
+  <b>Line number:</b>
+  <%= @seenlist.line_number %>
+</p>
+
+<p>
+  <b>Operator:</b>
+  <%= @seenlist.operator %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @seenlist.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_seenlist_path(@seenlist) %> |
+<%= link_to 'Back', seenlists_path %>

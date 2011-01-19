@@ -10,61 +10,74 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101109171853) do
+ActiveRecord::Schema.define(:version => 20110118170714) do
 
   create_table "aircraft", :force => true do |t|
-    t.string   "aircraft_type"
-    t.string   "constructors_number"
-    t.integer  "line_number"
-    t.integer  "aircraft_status_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "aircraft_type"
+    t.string    "constructors_number"
+    t.integer   "line_number"
+    t.integer   "aircraft_status_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "aircraft_histories", :force => true do |t|
-    t.integer  "aircraft_id"
-    t.integer  "aircraft_sequence"
-    t.string   "registration",      :limit => 10
-    t.string   "aircraft_details"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "aircraft_id"
+    t.integer   "aircraft_sequence"
+    t.string    "registration",      :limit => 10
+    t.string    "aircraft_details"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "aircraft_statuses", :force => true do |t|
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "airport_visits", :force => true do |t|
-    t.integer  "airport_id"
-    t.date     "visit_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "airport_id"
+    t.date      "visit_date"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "airports", :force => true do |t|
-    t.string   "name"
-    t.string   "iata_code",  :limit => 3
-    t.string   "icao_code",  :limit => 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.string    "iata_code",  :limit => 3
+    t.string    "icao_code",  :limit => 4
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+  end
+
+  create_table "seenlists", :force => true do |t|
+    t.integer   "airport_visit_id"
+    t.integer   "aircraft_history_id"
+    t.string    "registration"
+    t.string    "aircraft_type"
+    t.string    "constructors_number"
+    t.integer   "line_number"
+    t.string    "operator"
+    t.text      "notes",               :limit => 1048576
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "password_salt",                       :default => "", :null => false
-    t.string   "reset_password_token"
-    t.string   "remember_token"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "email",                               :default => "", :null => false
+    t.string    "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string    "password_salt",                       :default => "", :null => false
+    t.string    "reset_password_token"
+    t.string    "remember_token"
+    t.timestamp "remember_created_at"
+    t.integer   "sign_in_count",                       :default => 0
+    t.timestamp "current_sign_in_at"
+    t.timestamp "last_sign_in_at"
+    t.string    "current_sign_in_ip"
+    t.string    "last_sign_in_ip"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

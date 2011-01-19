@@ -1,6 +1,13 @@
    <p>
       <%= airport_visit.visit_date %> 
+      <%= airport_visit.seenlists.count %>
        
+      <%= if airport_visit.seenlists.count = 0 then
+          link_to 'Add Sightings', new_seenlist 
+          else 
+          link_to 'Add Sightings', seenlist_path 
+          end
+       %>
       <%= link_to 'Delete Visit' , [airport_visit.airport, airport_visit], 
                   :confirm => "Are you sure ?",
                   :method  => :delete 

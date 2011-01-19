@@ -1,0 +1,2 @@
+module SeenlistsHelper
+end

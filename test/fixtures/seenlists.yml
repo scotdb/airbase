@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  airport_visit_id: 1
+  aircraft_history_id: 1
+  registration: MyString
+  aircraft_type: MyString
+  constructors_number: MyString
+  line_number: 1
+  operator: MyString
+  notes: MyText
+
+two:
+  airport_visit_id: 1
+  aircraft_history_id: 1
+  registration: MyString
+  aircraft_type: MyString
+  constructors_number: MyString
+  line_number: 1
+  operator: MyString
+  notes: MyText

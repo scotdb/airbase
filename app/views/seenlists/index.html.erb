@@ -1,0 +1,37 @@
+<h1>Listing seenlists</h1>
+
+<table>
+  <tr>
+    <th>Airport visit</th>
+    <th>Aircraft history</th>
+    <th>Registration</th>
+    <th>Aircraft type</th>
+    <th>Constructors number</th>
+    <th>Line number</th>
+    <th>Operator</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @seenlists.each do |seenlist| %>
+  <tr>
+    <td><%= seenlist.airport_visit_id %></td>
+    <td><%= seenlist.aircraft_history_id %></td>
+    <td><%= seenlist.registration %></td>
+    <td><%= seenlist.aircraft_type %></td>
+    <td><%= seenlist.constructors_number %></td>
+    <td><%= seenlist.line_number %></td>
+    <td><%= seenlist.operator %></td>
+    <td><%= seenlist.notes %></td>
+    <td><%= link_to 'Show', seenlist %></td>
+    <td><%= link_to 'Edit', edit_seenlist_path(seenlist) %></td>
+    <td><%= link_to 'Destroy', seenlist, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Seenlist', new_seenlist_path %>

@@ -4,6 +4,7 @@
   <tr>
     <th>Airport</th>
     <th>Visit date</th>
+    <th>Aircraft seen</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,7 @@
   <tr>
     <td><%= airport_visit.airport_id %></td>
     <td><%= airport_visit.visit_date %></td>
+    <td><%= airport_visit.seenlist.count %></td>
     <td><%= link_to 'Show', airport_visit %></td>
     <td><%= link_to 'Edit', edit_airport_visit_path(airport_visit) %></td>
     <td><%= link_to 'Destroy', airport_visit, :confirm => 'Are you sure?', :method => :delete %></td>
