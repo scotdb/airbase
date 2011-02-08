@@ -1,7 +1,5 @@
 Airbase::Application.routes.draw do
 
-  resources :seenlists
-
   devise_for :users
 
   resources :aircraft do
@@ -12,7 +10,9 @@ Airbase::Application.routes.draw do
   end
 
   resources :airports do
-    resources :airport_visits
+    resources :airport_visits do
+      resources :seenlists
+    end
   end
 
   resources :aircraft_statuses
